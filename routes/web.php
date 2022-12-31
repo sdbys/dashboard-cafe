@@ -5,7 +5,9 @@ use App\Http\Controllers\transCtrl;
 use App\Http\Controllers\TablesCtrl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCtrl;
+use App\Http\Controllers\CustomerCtrl;
 use App\Http\Controllers\KitchensCtrl;
+
 
 
 
@@ -49,3 +51,9 @@ Route::get('transaction',[transCtrl::class,"index"]);
 Route::get('transaction/form/{id_trans?}',[transCtrl::class,"form"]);
 Route::get('transaction/delete/{id_trans}',[transCtrl::class,"delete"]);
 Route::post('transaction/save}',[transCtrl::class,"save"]);
+// customer
+Route::get('customer',[CustomerCtrl::class,"index"]);
+Route::get('customer/form/{id_cus?}',[CustomerCtrl::class,"form"]);
+Route::get('customer/delete/{id_cus}',[CustomerCtrl::class,"delete"]);
+Route::post('customer/save',[CustomerCtrl::class,"save"]);
+

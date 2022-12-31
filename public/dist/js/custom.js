@@ -55,7 +55,7 @@ function ganti_harga(e) {
 }
 // hapus menu
     function hapus_mantan(e) {
-    $id = $(e).attr("data-id");
-    $($id).remove();
+        $($id).remove();
+        $id = $(e).attr("data-id");
     }
 

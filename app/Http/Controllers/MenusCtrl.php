@@ -31,7 +31,7 @@ class MenusCtrl extends Controller
         // validasi 
         $req->validate (
             [
-                "mn_kd" => "required|max:5",
+                "mn_kd" => "required|unique|max:5",
                 "mn_nm" => "required|max:50",
                 "mn_cat_id" => "required",
                 "mn_harga" => "required|numeric",
@@ -41,7 +41,7 @@ class MenusCtrl extends Controller
                 "foto"   => "mimes:jpg,jpeg,png|max:3000"
             ],
             [
-              "mn_kd.required" => "Kode Menu Wajib diisi !",
+                "mn_kd.required" => "Kode Menu Wajib diisi !",
                 "mn_kd.unique" => "Kode Sudah digunakan",
                 "mn_kd.max" => "Kode maximal 5 Karakter",
                 "mn_nama.required" => "Nama Wajib diisi !",

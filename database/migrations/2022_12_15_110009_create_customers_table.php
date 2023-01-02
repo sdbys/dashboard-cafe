@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string("cus_nm",50);
             $table->string("cus_alamat",100);
             $table->string("cus_kota",50);
-            $table->integer("cus_jk");
+            $table->enum("cus_jk",['L','p']);
             $table->string("cus_telp");
-            $table->integer("cus_status");
+            $table->enum("cus_status",['A','NA']);
             $table->integer("cus_poin");
             $table->integer("cus_user_id");
             $table->timestamps();

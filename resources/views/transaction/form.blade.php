@@ -17,7 +17,7 @@
                             <span class="input-group-append">
                                 <button type="button" class="btn btn-warning btn-flat">SEARCH</button>
                             </span>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,12 +29,12 @@
                 <div class="dropdown-menu bg-success" role="menu">
                     @foreach ($dtCat as $rsCat)
                         <a class="dropdown-item text-light" href="#">{{ $rsCat->cat_nm }}</a>
-                    @endforeach                                
+                    @endforeach
                 </div>
-            </div>            
+            </div>
             <!-- List Menu -->
             <div class="menu-list px-1">
-                <div class="row">                    
+                <div class="row">
                 @foreach ($dtMenu as $rsMenu)
                     <div class="menu-item col-md-3" onclick="add_menu('{{ $rsMenu->id }}','{{ $rsMenu->mn_nm }}','{{ $rsMenu->mn_harga }}')">
                         <div class="inner">
@@ -49,7 +49,7 @@
                 @endforeach
                 </div>
             </div>
-            {{-- End List Menu --}}                    
+            {{-- End List Menu --}}
         </div>
         <div class="col-md-4">
             <div class="transaksi">
@@ -66,7 +66,7 @@
                             <a class="btn btn-sm btn-success"><i class="fas fa-ellipsis-h"  data-toggle="modal" data-target="#modal-customer"></i></a>
                         </div>
                     </div>
-                   
+
                     <p>
                         <input type="text" name="an" id="an" placeholder="Atas Nama">
                     </p>
@@ -74,7 +74,7 @@
                     <hr>
                     {{-- Detail Menu yang dipesan --}}
                     <div class="detail">
-                                                                                  
+
                     </div>
                     <hr>
                     {{-- End Detail Menu yang dipesan --}}
@@ -108,7 +108,7 @@
                     <input type="hidden" id="gtotal" name="gtotal">
                     <div class="row btn-action">
                         <div class="col-md-6">
-                            <button class="btn btn-success">SAVE</button>
+                            <button href="{{url('transaction/save')}}"  class="btn btn-success">SAVE</button>
                         </div>
                         <div class="col-md-6">
                             <button class="btn btn-warning">PRINT</button>
@@ -133,11 +133,10 @@
             </div>
             <div class="price col-md-5">
                 <h4><span>Rp</span> 7.000</h4>
-                <a href="javascript:void(0)" class="delete" onclick="hapus_mantan(this)" data-id=""><i class="fas fa-times"></i></a>
+                <a href="javascript:void(0)" class="delete" onclick="del_menu(this)" data-id=""><i class="fas fa-times"></i></a>
             </div>
-
         </div>
-    </div> 
+    </div>
 
     {{-- End Template Menu --}}
 
@@ -165,17 +164,17 @@
                     <tbody>
                         @foreach ($dtCus as $rsCus)
                             <tr>
-                                <td>{{ $rsCus->cus_kd }}</td>                                 
-                                <td>{{ $rsCus->cus_nm }}</td>                                 
-                                <td>{{ $rsCus->cus_alamat." ".$rsCus->cus_kota }}</td>                                 
-                                <td>{{ $rsCus->cus_telp }}</td>  
+                                <td>{{ $rsCus->cus_kd }}</td>
+                                <td>{{ $rsCus->cus_nm }}</td>
+                                <td>{{ $rsCus->cus_alamat." ".$rsCus->cus_kota }}</td>
+                                <td>{{ $rsCus->cus_telp }}</td>
                                 <td>
                                     <button onclick="pilih_customer('{{ $rsCus->id }}','{{ $rsCus->cus_kd }}','{{ $rsCus->cus_nm }}')" class="btn btn-danger btn-sm">CHOOSE</button>
-                                </td>                               
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
-                </table>                 
+                </table>
             </div>
         </div>
         <!-- /.modal-content -->

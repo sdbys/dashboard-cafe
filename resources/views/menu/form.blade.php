@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
-                        @if(@$rsMenu->foto)                               
+                        @if(@$rsMenu->foto)
                             <img class="thumb-menu-big" src="{{ @$rsMenu->foto }}" alt="{{ @$rsMenu->mn_nama }}">
                         @else
                             <img class="thumb-menu-big" src="{{ asset('images/no-image.webp') }}" alt="{{ @$rsMenu->mn_nama }}">
@@ -41,7 +41,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="mn_nm">Nama Menu</label>                        
+                        <label for="mn_nm">Nama Menu</label>
                         <input type="text" class="form-control @error('mn_nm') is-invalid @enderror" name="mn_nm" id="mn_nm" placeholder="Nama Menu" value="{{ @$rsMenu->mn_nm }}">
                         @error('mn_nm')
                             <div id="mn_nm" class="invalid-feedback">
@@ -50,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="mn_cat_id">Kategori</label>                        
+                        <label for="mn_cat_id">Kategori</label>
                         <select class="form-control @error('mn_cat_id') is-invalid @enderror" name="mn_cat_id" id="mn_cat_id">
                             <option value="">- Kategori -</option>
                             @foreach ($dtCat as $rsCat)
@@ -62,9 +62,9 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>                    
+                    </div>
                     <div class="form-group">
-                        <label for="mn_harga">Harga</label>                        
+                        <label for="mn_harga">Harga</label>
                         <input type="number" class="form-control @error('mn_harga') is-invalid @enderror" name="mn_harga" id="mn_harga" placeholder="Harga" value="{{ @$rsMenu->mn_harga }}">
                         @error('mn_harga')
                             <div id="mn_harga" class="invalid-feedback">
@@ -73,7 +73,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="mn_satuan">Satuan</label>                        
+                        <label for="mn_satuan">Satuan</label>
                         <input type="text" class="form-control @error('mn_satuan') is-invalid @enderror" name="mn_satuan" id="mn_satuan" placeholder="Harga" value="{{ @$rsMenu->mn_satuan }}">
                         @error('mn_satuan')
                             <div id="mn_satuan" class="invalid-feedback">
@@ -82,7 +82,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="mn_stok">Stok</label>                        
+                        <label for="mn_stok">Stok</label>
                         <select class="form-control @error('mn_stok') is-invalid @enderror" name="mn_stok" id="mn_stok">
                             <option value="A" {{ @$rsMenu->mn_stok=="A" ? "selected" : "" }}>Available</option>
                             <option value="NA" {{ @$rsMenu->mn_stok=="NA" ? "selected" : "" }}>Not Available</option>
@@ -94,7 +94,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="mn_kitc_id">Kitchen</label>                        
+                        <label for="mn_kitc_id">Kitchen</label>
                         <select class="form-control @error('mn_kitc_id') is-invalid @enderror" name="mn_kitc_id" id="mn_kitc_id">
                             <option value="">- Kitchen -</option>
                             @foreach ($dtKitchen as $rsKitchen)
@@ -106,9 +106,9 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>                     
+                    </div>
                     <div class="form-group">
-                        <label for="mn_desc">Deskripsi</label>                        
+                        <label for="mn_desc">Deskripsi</label>
                         <textarea type="text" class="form-control @error('mn_desc') is-invalid @enderror" name="mn_desc" id="mn_desc" placeholder="Deskripsi">{{ @$rsMenu->mn_desc }}</textarea>
                         @error('mn_desc')
                             <div id="mn_desc" class="invalid-feedback">
@@ -118,12 +118,12 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="SAVE">
-                    </div>                     
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    
-  </form> 
+
+  </form>
 @endsection
 

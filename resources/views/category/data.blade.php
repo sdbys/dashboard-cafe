@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title',"Data category")
-@section('page-title',"Data category")    
+@section('page-title',"Data category")
 @section('content')
 
             {{-- notif --}}
@@ -13,7 +13,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-tools">
-                
+
                 <a href="{{ url("category/form")  }}" class="btn btn-primary btn-md" >add new</a>
             </div>
         </div>
@@ -35,12 +35,12 @@
                                 <a href="{{ url("category/form/".$rsCat->id)}}">e</a>
                                 <a href="{{ url("category/delete/".$rsCat->id)}}">x</a>
                             </td>
-                        </tr>      
+                        </tr>
                     @endforeach
-                   
+
                 </tbody>
             </table>
         </div>
     </div>
-</div>
+
 @endsection

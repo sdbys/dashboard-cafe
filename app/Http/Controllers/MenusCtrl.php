@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class MenusCtrl extends Controller
 {
     function index(){
-        // response list data 
+        // response list data
         $data = [
             "title" => "Menu",
             "dtMenu" => menus::all()
@@ -28,10 +28,10 @@ class MenusCtrl extends Controller
         return view("menu.form",$data);
     }
     function save(Request $req){
-        // validasi 
+        // validasi
         $req->validate (
             [
-                "mn_kd" => "required|unique|max:5",
+                "mn_kd" => "required|max:5",
                 "mn_nm" => "required|max:50",
                 "mn_cat_id" => "required",
                 "mn_harga" => "required|numeric",
@@ -42,7 +42,7 @@ class MenusCtrl extends Controller
             ],
             [
                 "mn_kd.required" => "Kode Menu Wajib diisi !",
-                "mn_kd.unique" => "Kode Sudah digunakan",
+                //"mn_kd.unique" => "Kode Sudah digunakan",
                 "mn_kd.max" => "Kode maximal 5 Karakter",
                 "mn_nama.required" => "Nama Wajib diisi !",
                 "mn_nama.max" => "Nama maximal 50 Karaker !",
@@ -54,21 +54,21 @@ class MenusCtrl extends Controller
                 "mn_kitch_id.required" => "Dapur wajib diisi !",
                 "foto.mimes" => "Foto harus .jpg, .jpeg atau png !",
                 "foto.max" => "Foto maximal ukuran 1 MB !",
-   
+
             ]
         );
             // Proses Upload
-       
-        
+
+
         if($req->file("foto")){
-            $fileName = time().'.'.$req->file("foto")->extension();               
-            $result = $req->file("foto")->move(public_path('uploads/menu'), $fileName);    
+            $fileName = time().'.'.$req->file("foto")->extension();
+            $result = $req->file("foto")->move(public_path('uploads/menu'), $fileName);
             $foto = asset("uploads/menu/".$fileName);
         } else {
             $foto = $req->input("old_foto");
-        }             
+        }
 
-        
+
 
         // Proses Simpan
         try {
@@ -90,7 +90,7 @@ class MenusCtrl extends Controller
                 ]
             );
 
-            // Notif 
+            // Notif
             $notif = [
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan !"
@@ -112,7 +112,7 @@ class MenusCtrl extends Controller
             // Save
             Menu::where("id",$id)->delete();
 
-            // Notif 
+            // Notif
             $notif = [
                 "type" => "success",
                 "text" => "Data Berhasil Dihapus !"
@@ -125,7 +125,7 @@ class MenusCtrl extends Controller
             ];
         }
 
-        return redirect("menu")->with($notif);  
+        return redirect("menu")->with($notif);
     }
 }
 

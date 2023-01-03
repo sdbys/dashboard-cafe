@@ -16,7 +16,7 @@ class TablesCtrl extends Controller
         return view("tables.data",$data);
     }
     function form(request $req){
-        // form add or edit 
+        // form add or edit
         $data = [
             "title" => "tables",
             "rsTab" => tables::where("id",$req->id_tab)->first()
@@ -46,9 +46,9 @@ class TablesCtrl extends Controller
                 [
                    "mj_no" => $req -> input ("mj_no"),
                    "mj_capacity" => $req ->input ("mj_capacity")
-                ] 
+                ]
             );
-              // notif 
+              // notif
                 $notif = [
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan"
@@ -58,7 +58,7 @@ class TablesCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$err->getmessage()
             ];
-              return redirect(tables)->with($notif);
+              return redirect("tables")->with($notif);
         }
     }
     function delete($id){

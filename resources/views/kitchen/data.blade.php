@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-tools">
-                
+
                 <a href="{{ url("kitchen/form")  }}" class="btn btn-primary btn-md" >add new</a>
             </div>
         </div>
@@ -34,12 +34,11 @@
                                 <a href="{{ url("kitchen/form/".$rsKitc->id)}}">e</a>
                                 <a href="{{ url("kitchen/delete/".$rsKitc->id)}}">x</a>
                             </td>
-                        </tr>      
+                        </tr>
                     @endforeach
-                   
+
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 @endsection

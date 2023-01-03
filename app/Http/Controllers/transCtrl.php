@@ -29,8 +29,7 @@ class transCtrl extends Controller
         return view("transaction.form",$data);
     }
     function save(request $req){
-        // create or update
-        // validasi
+        dd($req);
     }
     function delete($id){
 

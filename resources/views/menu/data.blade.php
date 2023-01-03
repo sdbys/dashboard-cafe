@@ -33,7 +33,7 @@
                     @foreach ($dtMenu as $rsMenu)
                         <tr>
                             <td>
-                                @if($rsMenu->foto!="")                                
+                                @if($rsMenu->foto!="")
                                     <img class="thumb-menu" src="{{ $rsMenu->foto }}" alt="{{ $rsMenu->mn_nama }}">
                                 @else
                                     <img class="thumb-menu" src="{{ asset('images/no-image.webp') }}" alt="{{ $rsMenu->mn_nama }}">
@@ -50,15 +50,15 @@
                             </td>
                             <td>                                                     <div class="icon">
                                 <a href="{{ url("menu/form/".$rsMenu->id) }}"><i class="bi bi-pencil-square "></i></a>
-                                <a href="{{ url("menu/delete/".$rsMenu->id) }}"><i class="bi bi-trash "></i></a> 
-                            </div>       
-                               
+                                <a href="{{ url("menu/delete/".$rsMenu->id) }}"><i class="bi bi-trash "></i></a>
+                            </div>
+
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
-            </table>            
+            </table>
         </div>
-    </div> 
-</div>
+    </div>
+
 @endsection

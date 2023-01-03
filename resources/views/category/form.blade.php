@@ -2,7 +2,7 @@
 
 @section('title',$title)
 @section('page-title',$title)
-    
+
 @section('content')
     <div class="row">
         <div class="col-md-6">
@@ -28,5 +28,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection

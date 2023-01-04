@@ -53,10 +53,11 @@
         </div>
         <div class="col-md-4">
             <div class="transaksi">
-                <form action="" method="post">
+                <form action="{{ url('transaction/save')  }}" method="post">
                     @csrf
                     {{-- Info Transaksi --}}
-                    <h2><strong>NO :</strong> TR2022122200001</h2>
+                    <p><strong>Member : </strong><br><span id="member"></span></p>
+                    <input id="txtCusID" type="hidden" name="trans_cus_id">
                     <div class="row member">
                         <div class="col-md-9">
                             <p><strong>Member :</strong><br/><span id="member"></span></p>
@@ -68,7 +69,7 @@
                     </div>
 
                     <p>
-                        <input type="text" name="an" id="an" placeholder="Atas Nama">
+                        <input type="text" name="meja" id="meja" placeholder="Meja/AtasNama">
                     </p>
                     {{-- End Info Transaksi --}}
                     <hr>

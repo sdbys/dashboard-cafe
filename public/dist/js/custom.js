@@ -15,6 +15,9 @@ function pilih_customer(id_cus, kd_cus, nm_cus){
     $("#member").html(nm_cus + "("+kd_cus +")");
     $("#modal-customer").modal('hide');
     $("txtCusId").val(id_cus)
+    var diskon = 1500;
+    $("#diskon").html("<span>Rp</span>"+ number_format(diskon));
+    $("#txtDiskon").val(diskon);
     // update g total
     grandtotal();
 }
@@ -73,10 +76,10 @@ function ganti_harga(e) {
     var total = 0;
     var ppn = 0;
     $(".detail > .detail-item").each(function (e){
-      var harga = parseInt($(this).find(".txtHarga").val());
+      var harga =    parseInt($(this).find(".txtHarga").val());
       var jumlah= parseInt($(this).find(".jumlah").val());
-      total += harga * jumlah; // total harga
-        console.log(harga + "/n" + jumlah);
+      total += (harga * jumlah); // total harga
+        // console.log(harga + "/n" + jumlah);
     });
     // hitung total jumlah setelah dapat diskon
         total = total - parseInt($("#txtDiskon").val());
@@ -84,6 +87,7 @@ function ganti_harga(e) {
         ppn = (11/100) * total;
         $('#ppn').html('<span>Rp</span>' + number_format(ppn));
         $('#txtPPN').val(ppn);
+        console.log(total);
         // set grand total
         $("#amount").html('<span>Rp</span>' + number_format(total));
         $("#gtotal").val(total);

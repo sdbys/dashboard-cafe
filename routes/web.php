@@ -1,6 +1,7 @@
 <?php
 // call class controller
-use App\Http\Controllers\authCtrl;
+
+use App\Http\Controllers\AuthCtrl;
 use App\Http\Controllers\MenusCtrl;
 use App\Http\Controllers\transCtrl;
 use App\Http\Controllers\reportCtrl;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCtrl;
 use App\Http\Controllers\CustomerCtrl;
 use App\Http\Controllers\KitchensCtrl;
+
 
 
 
@@ -63,8 +65,8 @@ Route::post('customer/save',[CustomerCtrl::class,"save"]);
 // report
 Route::get('report/transaction',[reportCtrl::class,"rpt_transaction"]);
 // route
-Route::get("auth/login",[authCtrl::class,"login"]);
-Route::post("auth/login",[authCtrl::class,"cek_login"]);
-Route::get("auth/registrasi",[authCtrl::class,"registrasi"])->name("signup");// dengan nama route
-Route::post("auth/registrasi",[authCtrl::class,"save_registrasi"]);
-Route::get("auth/logout",[authCtrl::class,"logout"])->name("signout");
+Route::get("auth/login",[AuthCtrl::class,"login"]);
+Route::post("auth/login",[AuthCtrl::class,"cek_login"]);
+Route::get("auth/registrasi",[AuthCtrl::class,"registrasi"])->name("signup");// dengan nama route
+Route::post("auth/registrasi",[AuthCtrl::class,"save_registrasi"]);
+Route::get("auth/logout",[AuthCtrl::class,"logout"])->name("signout");

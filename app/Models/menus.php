@@ -10,3 +10,4 @@ class menus extends Model
     protected $table = "menus";
     protected $guarded = ["id"];
 }
+    

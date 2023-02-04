@@ -56,8 +56,6 @@
                 <form action="{{ url('transaction/save')  }}" method="post">
                     @csrf
                     {{-- Info Transaksi --}}
-                    <p><strong>Member : </strong><br><span id="member"></span></p>
-                    <input id="txtCusID" type="hidden" name="trans_cus_id">
                     <div class="row member">
                         <div class="col-md-9">
                             <p><strong>Member :</strong><br/><span id="member"></span></p>

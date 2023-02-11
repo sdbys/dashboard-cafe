@@ -3,7 +3,7 @@
 @section('title',"Data customer")
 @section('page-title',"Data customer")
 @section('content')
-    <form action="" method="post" enctype="multipart/form-data" >
+    <form action="{{ url('customer/save')  }}" method="post"  >
         @csrf
         <div class="row">
             <div class="col-md-8">
@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="cus_kd">kode customer</label>
-                            <input type="hidden" name="id_cus" class="form-control" value="{{ @$rsCus -> id }}">
+                            <input type="hidden" name="id" class="form-control" value="{{ @$rsCus -> id }}">
                             <input type="text" class="form-control @error('cus_kd') is-invalid @enderror" name="cus_kd" id="cus_kd" placeholder="kd001" value="{{ @$rsCus -> cus_kd }}">
                             @error('cus_kd')
                             <div id="cus_kd" class="invalid-feedback">
@@ -49,8 +49,8 @@
                         <div class="form-group">
                             <label for="cus_jk">Jenis Kelamin</label>
                             <select name="cus_jk" id="cus_jk">
-                                <option value="{{ @$rsCus -> L  }}">lelaki</option>
-                                <option value="{{  @$rsCus -> p }}">perempuan</option>
+                                <option value="L">lelaki</option>
+                                <option value="p">perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -78,6 +78,19 @@
                             </div>
                             @enderror
                         </div>
+                         <div class="form-group">
+                            <label for="cus_poin">Customer user id </label>
+                            <input type="number" class="form-control @error('cus_user_id')is-invalid @enderror" name="cus_user_id" id="cus_user_id" placeholder="010122" value="{{ @$rsCus -> cus_user_id }}" >
+                            @error('cus_user_id')
+                            <div  id="cus_user_id"  class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="save">
+                    </div>
                     </div>
                 </div>
             </div>

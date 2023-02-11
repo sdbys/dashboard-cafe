@@ -30,9 +30,12 @@
                         <tr>
                             <td>{{ $rsKitc -> id  }}</td>
                             <td>{{ $rsKitc ->kitc_nm}} </td>
+                           
                             <td>
-                                <a href="{{ url("kitchen/form/".$rsKitc->id)}}">e</a>
-                                <a href="{{ url("kitchen/delete/".$rsKitc->id)}}">x</a>
+                               <td>
+                                <a href="{{ url("kitchen/form/".$rsKitc->id)}}"><i class="bi bi-pencil p-2" ></i></a>
+                                <a href="{{ url("kitchen/delete/".$rsKitc->id)}}"><i class="bi bi-eraser p-2"></i></a>
+                            </td>
                             </td>
                         </tr>
                     @endforeach

@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-tools">
-                <a href="{{url ("customer.form")}}"class="btn btn-primary">Add new</a>
+                <a href="{{url ("customer/form")}}"class="btn btn-primary">Add new</a>
             </div>
         </div>
         <div class="card-body">
@@ -31,8 +31,8 @@
                             <td>{{$rsCus -> cus_telp}}</td>
                             <td>{{$rsCus -> cus_jk}}</td>
                             <td>
-                                <a href="">e</a>
-                                <a href="">x</a>
+                                <a href="{{ url("customer/form/".$rsCus->id)}}"><i class="bi bi-pencil p-2" ></i></a>
+                                <a href="{{ url("customer/delete/".$rsCus->id)}}"><i class="bi bi-eraser p-2"></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -40,5 +40,5 @@
             </table>
         </div>
     </div>
-</div>
+
 @endsection

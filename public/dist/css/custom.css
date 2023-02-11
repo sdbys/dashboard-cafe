@@ -168,3 +168,11 @@
 .transaksi .btn-action button {
     width: 100%;
 }
+
+.bi-pencil{
+    color: plum;
+}
+
+.bi-eraser{
+    color: red;
+}

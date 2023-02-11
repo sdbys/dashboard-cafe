@@ -14,7 +14,7 @@
           <img src="{{ asset('dist/img/1.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Bima Prihartanto</a>
+          <a href="#" class="d-block">{{ @Auth::user()->name}} ( {{@auth::user()->level}} ) </a>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('customer/form')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New</p>
                 </a>
@@ -62,7 +62,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-book"></i>
               <p>
-                menus
+                menu
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -97,7 +97,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('category/form')  }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New</p>
                 </a>
@@ -174,7 +174,7 @@
             </ul>
           </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-danger">
+                <a href="{{ route("signout") }}" class="nav-link text-danger">
                   <i class="bi bi-arrow-bar-right nav-icon"></i>
                   <p>Log out</p>
                 </a>

@@ -31,9 +31,9 @@
                         <tr>
                             <td>{{ $rsCat -> id  }}</td>
                             <td>{{ $rsCat ->cat_nm}} </td>
-                            <td>
-                                <a href="{{ url("category/form/".$rsCat->id)}}">e</a>
-                                <a href="{{ url("category/delete/".$rsCat->id)}}">x</a>
+                           <td>
+                                <a href="{{ url("category/form/".$rsCat->id)}}"><i class="bi bi-pencil p-2" ></i></a>
+                                <a href="{{ url("category/delete/".$rsCat->id)}}"><i class="bi bi-eraser p-2"></i></a>
                             </td>
                         </tr>
                     @endforeach

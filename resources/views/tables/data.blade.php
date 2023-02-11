@@ -33,9 +33,9 @@
                             <td>{{ $rsTab -> id  }}</td>
                             <td>{{ $rsTab ->mj_no}} </td>
                             <td>{{ $rsTab ->mj_capacity}} </td>
-                            <td>
-                                <a href="{{ url("tables/form/".$rsTab->id)}}">e</a>
-                                <a href="{{ url("tables/delete/".$rsTab->id)}}">x</a>
+                           <td>
+                                <a href="{{ url("tables/form/".$rsTab->id)}}"><i class="bi bi-pencil p-2" ></i></a>
+                                <a href="{{ url("tables/delete/".$rsTab->id)}}"><i class="bi bi-eraser p-2"></i></a>
                             </td>
                         </tr>
                     @endforeach
